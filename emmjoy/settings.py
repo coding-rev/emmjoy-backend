@@ -1,4 +1,6 @@
 import os
+import django_heroku
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+    'storages',
     'rest_framework',
     'rest_framework.authtoken',
 ]
@@ -117,3 +120,8 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+django_heroku.settings(locals())
+
+db_from_env=dj_database_url.config(conn_max_age=600)
+DATABASES["default"].update(db_from_env)
