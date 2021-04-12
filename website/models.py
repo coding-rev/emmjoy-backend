@@ -4,7 +4,7 @@ from register.models import EmmjoyUsers
 
 class Courses(models.Model):
 	tutor 			= models.ForeignKey(EmmjoyUsers, on_delete=models.CASCADE)
-	image 			= models.ImageField()
+	image 			= models.ImageField(blank=True, null=True)
 	title 			= models.CharField(max_length=100)
 	price 			= models.CharField(max_length=100)
 	duration 		= models.CharField(max_length=100)
