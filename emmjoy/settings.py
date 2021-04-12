@@ -12,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '*l^ce$ygdh=4ksn@@ll)w4d3^@cf!@9mqzfggbv+=h-330*s_='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['emmjoy-backend.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
