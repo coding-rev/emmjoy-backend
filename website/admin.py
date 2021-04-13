@@ -5,4 +5,11 @@ from .models import Courses
 admin.site.site_title  = "Emmjoy Website"
 admin.site.site_header = "Emmjoy Website"
 
-admin.site.register(Courses)
+
+class CourseAdmin(admin.ModelAdmin):
+    list_display = ['title', 'price','duration', 'tutor']
+    list_filter = ['date_posted', 'tutor']
+
+admin.site.register(Courses, CourseAdmin)
+
+
